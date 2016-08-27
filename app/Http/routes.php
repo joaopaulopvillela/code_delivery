@@ -19,7 +19,11 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::get('/acessonegado', function(){
+    return view('errors.acessonegado');
+});
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth.checkrole'], function () {
 
     Route::group(['prefix' => 'categories', 'as' => 'categories.'], function(){
 

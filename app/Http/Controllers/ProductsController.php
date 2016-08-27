@@ -27,7 +27,6 @@ class ProductsController extends Controller
      */
     public function __construct(ProductRepository $repository, CategoryRepository $categoryRepository)
     {
-        $this->middleware('auth');
         $this->repository = $repository;
         $this->categoryRepository = $categoryRepository;
     }
