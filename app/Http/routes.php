@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+
+Route::get('/admin/categories', ['as' => 'admin.categories', 'uses' => 'CategoriesController@index' ]);
+Route::get('/admin/categories/create', ['as' =>'admin.categories.create','uses' => 'CategoriesController@create']);
