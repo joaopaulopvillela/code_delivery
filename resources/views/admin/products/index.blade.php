@@ -2,24 +2,29 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="x_panel">
+        <div class="x_title">
 
-        <div class="title" >Categorias</div>
+            <h2>Produtos</h2>
 
-        <div class="">
-            <a href="{{ route('admin.products.create') }}" class="btn btn-default">Nova produto</a>
+            <ul class="nav navbar-right panel_toolbox">
+                <li>
+                    <a href="{{ route('admin.products.create') }}" class="btn btn-default">Novo produto</a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
         </div>
 
         <table class="table table-bordered">
 
             <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>Nome</td>
-                    <td>Categoria</td>
-                    <td>Preço</td>
-                    <td>Ação</td>
-                </tr>
+            <tr>
+                <td>ID</td>
+                <td>Nome</td>
+                <td>Categoria</td>
+                <td>Preço</td>
+                <td>Ação</td>
+            </tr>
             </thead>
 
             <tbody>
@@ -31,7 +36,7 @@
                     <td>{{$product->category->name}}</td>
                     <td>{{$product->price}}</td>
                     <td>
-                        <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-default" >Editar</a>
+                        <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-default">Editar</a>
                     </td>
                 </tr>
             @endforeach

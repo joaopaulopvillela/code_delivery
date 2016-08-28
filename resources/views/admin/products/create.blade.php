@@ -1,22 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <div class="x_panel">
+        <div class="x_title">
 
-    <div class="title">Novo Produto</div>
+            <h2>Novo Produto</h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li>
+                    <a href="{{ route('admin.products.index') }}" class="btn btn-default">Listagem produto</a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
 
-    @include('errors._check')
 
-    {{ Form::open(['route' => 'admin.products.store']) }}
+        @include('errors._check')
 
-    @include('admin.products._form')
+        {{ Form::open(['route' => 'admin.products.store']) }}
 
-    <div class="form-group">
+        @include('admin.products._form')
 
-        {{ Form::submit('Criar Produto', ['class' => 'btn btn-success']) }}
+        <div class="form-group">
+
+            {{ Form::submit('Criar Produto', ['class' => 'btn btn-success']) }}
+        </div>
+
+        {{ Form::close() }}
+
     </div>
-
-    {{ Form::close() }}
-
-</div>
 @endsection

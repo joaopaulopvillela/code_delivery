@@ -1,22 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <div class="x_panel">
+        <div class="x_title">
 
-    <div class="title">Nova categoria</div>
+            <h2>Nova categoria</h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li>
+                    <a href="{{ route('admin.categories.index') }}" class="btn btn-default">Listagem categoria</a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
 
-    @include('errors._check')
 
-    {{ Form::open(['route' => 'admin.categories.store']) }}
+        @include('errors._check')
 
-    @include('admin.categories._form')
+        {{ Form::open(['route' => 'admin.categories.store', 'class' => 'form-horizontal form-label-left']) }}
 
-    <div class="form-group">
+        @include('admin.categories._form')
 
-        {{ Form::submit('Criar categoria', ['class' => 'btn btn-success']) }}
+        <div class="form-group">
+
+            {{ Form::submit('Criar categoria', ['class' => 'btn btn-success']) }}
+        </div>
+
+        {{ Form::close() }}
+
     </div>
-
-    {{ Form::close() }}
-
-</div>
 @endsection
