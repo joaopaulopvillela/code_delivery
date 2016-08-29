@@ -53,5 +53,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth.check
 
     });
 
+    Route::group(['prefix' => 'orders', 'as' => 'orders.'], function(){
+
+        Route::get('/',                 ['as' => 'index', 'uses' => 'OrdersController@index']);
+        Route::get('edit/{id}',         ['as' => 'edit', 'uses' => 'OrdersController@index']);
+
+    });
+
 
 });
