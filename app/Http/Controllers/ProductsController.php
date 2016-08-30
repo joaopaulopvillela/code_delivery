@@ -59,7 +59,7 @@ class ProductsController extends Controller
     {
         $this->repository->create($request->all());
 
-        return redirect()->route('admin.products');
+        return redirect()->route('admin.products.index');
     }
 
     public function update(AdminProductRequest $request, $id)
@@ -67,6 +67,6 @@ class ProductsController extends Controller
 
         $this->repository->update($request->all(), $id);
 
-        return redirect()->route('admin.products');
+        return redirect()->route('admin.products.index');
     }
 }

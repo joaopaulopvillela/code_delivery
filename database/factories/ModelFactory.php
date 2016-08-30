@@ -53,7 +53,7 @@ $factory->define(CodeDelivery\Models\Order::class, function(Faker\Generator $fak
     return [
         'client_id' => rand(1,10),
         'total' => $fake->numberBetween(50,150),
-        'status' => rand(0,2),
+        'status' => 0,
     ];
 });
 $factory->define(CodeDelivery\Models\OrderItem::class, function(Faker\Generator $fake){
@@ -61,6 +61,6 @@ $factory->define(CodeDelivery\Models\OrderItem::class, function(Faker\Generator 
     return [
         'product_id' => rand(1,50),
         'price' => $fake->numberBetween(20,50),
-        'qtd' => rand(1,20)
+        'qtd' => rand(1,5)
     ];
 });

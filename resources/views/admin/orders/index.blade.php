@@ -30,8 +30,8 @@
                     <td>#{{$order->id}}</td>
                     <td>{{$order->client->user->name}}</td>
                     <td>
-                        @if($order->deliverynam)
-                            {{$order->deliverynam->name}}
+                        @if($order->deliveryman)
+                            {{$order->deliveryman->name}}
                         @else
                             --
                         @endif
@@ -40,7 +40,7 @@
                     <td>{{ $order->status }}</td>
                     <td>
                         <a href="{{ route('admin.orders.edit', $order->id) }}"
-                           class="btn btn-default">Editar</a>
+                           class="btn btn-default">Visualizar</a>
                     </td>
                 </tr>
             @endforeach

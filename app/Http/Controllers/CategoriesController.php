@@ -50,7 +50,7 @@ class CategoriesController extends Controller
     {
         $this->repository->create($request->all());
 
-        return redirect()->route('admin.categories');
+        return redirect()->route('admin.categories.index');
     }
 
     public function update(AdminCategorieRequest $request, $id)
@@ -58,6 +58,6 @@ class CategoriesController extends Controller
 
         $this->repository->update($request->all(), $id);
 
-        return redirect()->route('admin.categories');
+        return redirect()->route('admin.categories.index');
     }
 }
